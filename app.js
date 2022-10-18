@@ -2,11 +2,11 @@ const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
 
-createGrid();
+createGrid(16);
 
-function createGrid() {
-  makeRows(16);
-  makeCols(16);
+function createGrid(size) {
+  makeRows(size);
+  makeCols(size);
 }
 
 function makeRows(numRows) {
@@ -37,4 +37,23 @@ function changeColor(event) {
   }
 
   event.target.style.backgroundColor = "black";
+}
+
+function resetGrid() {
+  let size = prompt("Enter a number less than or equal to 64: ");
+
+  if (size == undefined || size == 0 || size == "") {
+    return;
+  }
+
+  while (size > 64) {
+    size = prompt("Size must be less than or equal to 64. Enter number: ");
+  }
+
+  clearGrid();
+  createGrid(size);
+}
+
+function clearGrid() {
+  container.innerHTML = "";
 }
