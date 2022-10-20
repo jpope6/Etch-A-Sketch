@@ -1,8 +1,10 @@
 const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
+let size = 16;
+let gridSize = size * size;
 
-createGrid(16);
+createGrid(size);
 
 function createGrid(size) {
   makeRows(size);
@@ -40,7 +42,7 @@ function changeColor(event) {
 }
 
 function resetGrid() {
-  let size = prompt("Enter a number less than or equal to 64: ");
+  size = prompt("Enter a number less than or equal to 64: ");
 
   if (size == undefined || size == 0 || size == "") {
     return;
