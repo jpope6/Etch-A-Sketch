@@ -5,6 +5,7 @@ let size = 16;
 let gridSize = size * size;
 
 createGrid(size);
+print(size)
 
 function createGrid(size) {
   makeRows(size);
