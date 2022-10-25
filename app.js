@@ -5,7 +5,6 @@ let size = 16;
 let gridSize = size * size;
 
 createGrid(size);
-print(size)
 
 function createGrid(size) {
   makeRows(size);
@@ -25,6 +24,8 @@ function makeCols(numCells) {
       let cell = document.createElement("div");
       cell.addEventListener("mouseover", changeColor);
       cell.addEventListener("mousedown", changeColor);
+      cell.style.width = `${720 / numCells}px`;
+      cell.style.height = `${720 / numCells}px`;
       rows[j].appendChild(cell).className = "cell";
     }
   }
