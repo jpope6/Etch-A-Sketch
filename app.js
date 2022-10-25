@@ -24,8 +24,8 @@ function makeCols(numCells) {
       let cell = document.createElement("div");
       cell.addEventListener("mouseover", changeColor);
       cell.addEventListener("mousedown", changeColor);
-      cell.style.width = `${10000 / gridSize}px`;
-      cell.style.height = `${10000 / gridSize}px`;
+      cell.style.width = `${720 / numCells}px`;
+      cell.style.height = `${720 / numCells}px`;
       rows[j].appendChild(cell).className = "cell";
     }
   }
@@ -44,14 +44,14 @@ function changeColor(event) {
 }
 
 function resetGrid() {
-  size = prompt("Enter a number less than or equal to 64: ");
+  size = prompt("Enter a number less than or equal to 100: ");
 
   if (size == undefined || size == 0 || size == "") {
     return;
   }
 
-  while (size > 64) {
-    size = prompt("Size must be less than or equal to 64. Enter number: ");
+  while (size > 100) {
+    size = prompt("Size must be less than or equal to 100. Enter number: ");
   }
 
   clearGrid();
