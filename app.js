@@ -2,7 +2,7 @@ const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
 let size = 16;
-let gridSize = size * size;
+let gridSize = 16 * 16;
 
 createGrid(size);
 
@@ -24,6 +24,8 @@ function makeCols(numCells) {
       let cell = document.createElement("div");
       cell.addEventListener("mouseover", changeColor);
       cell.addEventListener("mousedown", changeColor);
+      cell.style.width = `${10000 / gridSize}px`;
+      cell.style.height = `${10000 / gridSize}px`;
       rows[j].appendChild(cell).className = "cell";
     }
   }
