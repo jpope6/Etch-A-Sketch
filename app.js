@@ -1,8 +1,12 @@
 const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
+let colorPicker = document.getElementById("colorpicker");
+let eraser = document.getElementsByClassName("erase")
 let size = 16;
 let gridSize = 16 * 16;
+let currentColor = "#000000";
+let currentMode = "draw"
 
 createGrid(size);
 
@@ -31,16 +35,34 @@ function makeCols(numCells) {
   }
 }
 
-mouseDown = false;
+let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
+
+
+colorPicker.oninput = (e) => setColor(e.target.value);
+
+
+function setColor(color) {
+  currentColor = color;
+}
+
+function setMode(mode) {
+  currentMode = mode
+}
 
 function changeColor(event) {
   if (event.type == "mouseover" && !mouseDown) {
     return;
   }
 
-  event.target.style.backgroundColor = "black";
+  if (currentMode == "draw") {
+    event.target.style.backgroundColor = currentColor;
+  }
+
+  if (currentMode == "erase") {
+    event.target.style.backgroundColor = "white"
+  }
 }
 
 function resetGrid() {
