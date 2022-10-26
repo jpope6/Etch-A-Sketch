@@ -22,7 +22,26 @@ body {
 
 .cell {
   background-color: white;
-  border: 1px solid black;
   width: 20px;
   height: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.color,
+.draw,
+.reset,
+.erase {
+  padding: 10px;
+  margin: 10px;
 }

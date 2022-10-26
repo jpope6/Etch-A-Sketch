@@ -9,15 +9,17 @@
   </head>
   <body>
     <h1>Etch-A-Sketch</h1>
-    <div id="container"></div>
-    <div class="buttons">
-      <button class="reset" onclick="resetGrid()">Reset</button>
-      <button class="draw" onclick="setMode('draw')">Draw</button>
-      <button class="erase" onclick="setMode('erase')">Erase</button>
-    </div>
-    <div class="color">
-      <label for="colorpicker">Color Picker:</label>
-      <input type="color" id="colorpicker" />
+    <div class="main">
+      <div id="container"></div>
+      <div class="buttons">
+        <div class="color">
+          <label for="colorpicker">Color Picker:</label>
+          <input type="color" id="colorpicker" />
+        </div>
+        <button class="draw" onclick="setMode('draw')">Draw</button>
+        <button class="erase" onclick="setMode('erase')">Erase</button>
+        <button class="reset" onclick="resetGrid()">Reset</button>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
