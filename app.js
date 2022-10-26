@@ -27,18 +27,12 @@ function makeCols(numCells) {
     for (j = 0; j < numCells; j++) {
       let cell = document.createElement("div");
       cell.addEventListener("mouseover", changeColor);
-      cell.addEventListener("mousedown", changeColor);
       cell.style.width = `${720 / numCells}px`;
       cell.style.height = `${720 / numCells}px`;
       rows[j].appendChild(cell).className = "cell";
     }
   }
 }
-
-let mouseDown = false;
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
-
 
 colorPicker.oninput = (e) => setColor(e.target.value);
 
@@ -52,10 +46,6 @@ function setMode(mode) {
 }
 
 function changeColor(event) {
-  if (event.type == "mouseover" && !mouseDown) {
-    return;
-  }
-
   if (currentMode == "draw") {
     event.target.style.backgroundColor = currentColor;
   }
